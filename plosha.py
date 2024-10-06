@@ -3,7 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import*
 #створення елементів інтерфейсу
 app = QApplication([])
-
+#головне вікно меню
 my_win1 = QWidget()
 my_win1.setWindowTitle("Меню")
 my_win1.resize(300, 300)
@@ -27,7 +27,7 @@ my_win1.setLayout(line)
 
 
 
-#Главное окно
+#Главное окно площі
 my_win = QWidget()
 my_win.setWindowTitle("Площа")
 my_win.resize(300, 300)
@@ -64,7 +64,7 @@ my_win.setLayout(line)
 
 
 
-#Главное окно
+#Главное окно периметра
 my_win2 = QWidget()
 my_win2.setWindowTitle("Периметр")
 my_win2.resize(300, 300)
