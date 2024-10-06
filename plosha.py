@@ -37,7 +37,7 @@ line.addLayout(line2)
 my_win1.setLayout(line)
 
 
-#Главное окно площі
+#Вікно площі
 my_win = QWidget()
 my_win.setWindowTitle("Площа")
 my_win.resize(300, 300)
@@ -82,7 +82,7 @@ line.addLayout(line4)
 my_win.setLayout(line)
 
 
-#Главное окно периметра
+#Вікно периметра
 my_win2 = QWidget()
 my_win2.setWindowTitle("Периметр")
 my_win2.resize(300, 300)
