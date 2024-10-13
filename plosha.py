@@ -48,6 +48,9 @@ my_win.setStyleSheet("background-color:lightblue;")
 question = QLabel("⭑🟊  Знайти площу ⎕ 🟊⭑")
 question.setStyleSheet("font-size:23px;")
 
+button_menu = QPushButton("Меню")
+button_menu.setStyleSheet("font-size:15px;")
+
 a1 = QLabel("🟆 ⇨ Довжина:")
 a1.setStyleSheet("font-size:19px;")
 
@@ -60,8 +63,12 @@ b = QLineEdit()
 button = QPushButton("🟊 Вичислити 🟊")
 button.setStyleSheet("font-size:15px;")
 
+line0 = QHBoxLayout()
+line0.addWidget(button_menu, alignment= Qt.AlignRight)
+
 line1 = QHBoxLayout()
 line1.addWidget(question, alignment= Qt.AlignCenter)
+
 
 line2 = QHBoxLayout()
 line2.addWidget(a1, alignment= Qt.AlignLeft)
@@ -75,6 +82,7 @@ line4 = QHBoxLayout()
 line4.addWidget(button, alignment= Qt.AlignCenter)
 
 line = QVBoxLayout()
+line.addLayout(line0)
 line.addLayout(line1)
 line.addLayout(line2)
 line.addLayout(line3)
@@ -93,6 +101,9 @@ my_win2.setStyleSheet("background-color:lightblue;")
 question0 = QLabel("⭑🟊  Знайти периметр  🟊⭑")
 question0.setStyleSheet("font-size:23px;")
 
+button_menu1 = QPushButton("Меню")
+button_menu1.setStyleSheet("font-size:15px;")
+
 a10 = QLabel("🟆  1 сторона:")
 a10.setStyleSheet("font-size:19px;")
 
@@ -103,6 +114,9 @@ b0 = QLineEdit()
 
 button3 = QPushButton("🟊 Вичислити 🟊")
 button3.setStyleSheet("font-size:15px;")
+
+line0 = QHBoxLayout()
+line0.addWidget(button_menu1, alignment= Qt.AlignRight)
 
 line1 = QHBoxLayout()
 line1.addWidget(question0, alignment= Qt.AlignCenter)
@@ -119,6 +133,7 @@ line4 = QHBoxLayout()
 line4.addWidget(button3, alignment= Qt.AlignCenter)
 
 line = QVBoxLayout()
+line.addLayout(line0)
 line.addLayout(line1)
 line.addLayout(line2)
 line.addLayout(line3)
@@ -138,7 +153,7 @@ def button_OK():
 
 #Функція кнопки периметра
 def button_200():
-    c = 2*(float(a0.text())*float(b0.text()))
+    c = 2*(float(a0.text())+float(b0.text()))
     c = str(c)
     win_1 = QMessageBox()
     win_1.setText(c)
@@ -160,10 +175,26 @@ def button_20():
     my_win2.show()
 
 
+#Функція для зміни вікна меню на вікно калькулятора
+def button_kalk():
+    my_win1.close()
+    my_win.close()
+    my_win2.close()
+
+
+#Функція для зміни вікна меню на вікно меню
+def button_30():
+    my_win1.show()
+    my_win2.close()
+    my_win.close()
+
+
 #Прив'язення функцій до кнопок
 button.clicked.connect(button_OK)
 button1.clicked.connect(button_10)
 button2.clicked.connect(button_20)
+button_menu.clicked.connect(button_30)
+button_menu1.clicked.connect(button_30)
 button3.clicked.connect(button_200)
 
 
